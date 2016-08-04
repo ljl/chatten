@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Person', 'Antall linjer'],
+                ['Mimir', 21200],
+                ['Fredrik', 14400],
+                ['Marius', 11000],
+                ['Hilde', 9900],
+                ['Torunn Kanutte', 9700],
+                ['Julie', 8100],
+                ['Ole', 7300],
+                ['Mikkel', 5600],
+                ['Stian', 5490],
+                ['Truls', 5400],
+                ['Reidar', 5400],
+                ['Iver', 5000],
+                ['Sigrid', 4700],
+                ['Roy', 4500],
+                ['Jon', 3400],
+                ['Torunn Vormedal', 1400],
+                ['Håvard', 1400],
+                ['Lasse', 850],
+                ['Viktoria', 690],
+                ['Torstein', 690],
+                ['Daniel', 580]
+            ]);
+
+            var options = {
+                title: 'Aktivitet i chatten'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
